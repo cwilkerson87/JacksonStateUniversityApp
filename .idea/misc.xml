@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable-v24/edit_txt_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable-v24/edt_button_background.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/btn_background.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/edt_background.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/message_box_background.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_login.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_login2.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_message_adapter.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_user.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/menu.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/receive.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/sent.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/menu/menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

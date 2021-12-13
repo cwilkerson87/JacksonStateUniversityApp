@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentSignUp">
+
+
+
+
+    <ImageView
+        android:id="@+id/jsu_logo"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/jsutigers" />
+
+    <ImageView
+        android:id="@+id/tiger_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/btnSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="120dp"
+        android:src="@drawable/tiger" />
+
+    <EditText
+        android:id="@+id/edt_frstname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/radioGroup"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_txt_background"
+        android:hint="FirstName"
+        android:nextFocusDown="@+id/edt_password"
+        android:paddingStart="13dp" />
+
+    <EditText
+        android:id="@+id/edt_lstname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_frstname"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_txt_background"
+        android:hint="LastName"
+        android:nextFocusDown="@+id/edt_password"
+        android:paddingStart="13dp" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_lstname"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_txt_background"
+        android:hint="Email"
+        android:nextFocusDown="@+id/edt_password"
+        android:paddingStart="13dp" />
+
+    <EditText
+        android:id="@+id/std_id"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_email"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_txt_background"
+        android:hint="ID#"
+        android:paddingStart="13dp"
+        android:paddingEnd="12dp" />
+
+    <EditText
+        android:id="@+id/roll_number"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_below="@id/edt_email"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="174dp"
+        android:background="@drawable/edit_txt_background"
+        android:hint="Roll#"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/std_id"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_txt_background"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="13dp" />
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/edt_year"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_below="@id/edt_email"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginRight="20dp"-->
+    <!--        android:background="@drawable/edit_txt_background"-->
+    <!--        android:hint="Year"-->
+    <!--        android:paddingStart="13dp" />-->
+
+    <Spinner
+        android:id="@+id/edt_year"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/edt_email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/edit_txt_background"
+        android:entries="@array/year"
+        android:paddingLeft="3dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_password"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edt_button_background"
+        android:text="Log in"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_password"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edt_button_background"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="213dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/std_Btn"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginVertical="140dp"
+            android:layout_marginLeft="100dp"
+            android:checked="true"
+            android:onClick="onClick"
+            android:text="Student"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/faculty_Btn"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_marginVertical="140dp"
+            android:checked="false"
+            android:onClick="onClick"
+            android:text="Faculty"
+            android:textSize="20sp" />
+
+
+    </RadioGroup>
+
+    <!--    <RadioButton-->
+    <!--        android:id="@+id/std_Btn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/jsu_logo"-->
+    <!--        android:layout_marginStart="100dp"-->
+    <!--        android:text="Student"-->
+    <!--        android:textSize="20sp" />-->
+
+    <!--    <RadioButton-->
+    <!--        android:id="@+id/faculty_Btn"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@+id/jsu_logo"-->
+    <!--        android:layout_marginVertical="1dp"-->
+    <!--        android:layout_marginStart="220dp"-->
+    <!--        android:text="Faculty"-->
+    <!--        android:textSize="20sp" />-->
+
+
+</RelativeLayout>

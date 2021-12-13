@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "561179573206",
+    "project_id": "jacksonstateuniversity",
+    "storage_bucket": "jacksonstateuniversity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561179573206:android:254d3b284b356e391fc277",
+        "android_client_info": {
+          "package_name": "com.example.jacksonstateuniversity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561179573206-16hrhombbo7jr993p0urbo4rn80aq4od.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAWXckw5sTGIuQU7qdr1C6T28f4rkLDMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561179573206-16hrhombbo7jr993p0urbo4rn80aq4od.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">JacksonStateUniversity</string>
+
+    <string-array name="year">
+
+        <item>Select</item>
+        <item>Freshman</item>
+        <item>Sophomore</item>
+        <item>Junior</item>
+        <item>Senior</item>
+    </string-array>
+
+    <string-array name="departments">
+
+        <item>Select</item>
+        <item>Accounting</item>
+        <item>Chemistry</item>
+        <item>Engineering</item>
+        <item>English</item>
+        <item>History</item>
+        <item>Psychology</item>
+        <item>Architecture</item>
+
+    </string-array>
+
+</resources>
