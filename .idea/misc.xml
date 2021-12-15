@@ -10,18 +10,24 @@
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/edt_background.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/message_box_background.xml" value="0.1" />
-        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_chat.xml" value="0.264" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty_main.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_group.xml" value="0.264" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_group_chat.xml" value="0.2" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_group_chat2.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_login.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_login2.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_message_adapter.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_user.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_welcome_intro.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/faculty.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/menu.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/receive.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/sent.xml" value="0.1" />
-        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/menu/menu.xml" value="0.264" />
       </map>
     </option>
   </component>

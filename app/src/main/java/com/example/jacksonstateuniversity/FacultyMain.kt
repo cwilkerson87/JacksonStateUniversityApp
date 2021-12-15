@@ -12,47 +12,51 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 //import com.google.firebase.database.R
 
-class MainActivity : AppCompatActivity() {
+class FacultyMain : AppCompatActivity() {
 
-    private lateinit var userRecyclerView : RecyclerView
-    private lateinit var userList: ArrayList<Student>
-    private lateinit var adaptor: UserAdaptor
+
+    private lateinit var facultyRecyclerView: RecyclerView
+    private lateinit var facultyList: ArrayList<Faculty>
+    private lateinit var facultyAdapter : FacultyAdaptor
     private lateinit var mAthu : FirebaseAuth
     private lateinit var mDbRef : DatabaseReference
 
     @SuppressLint("CutPasteId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_faculty_main)
 
         mAthu = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
-        userList = ArrayList()
+        facultyList = ArrayList()
+        facultyAdapter = FacultyAdaptor(this,facultyList)
 
-        adaptor = UserAdaptor(this, userList)
-
-        userRecyclerView = findViewById(R.id.userRecyclerView)
-
-        userRecyclerView.layoutManager = LinearLayoutManager(this)
-        userRecyclerView.adapter = adaptor
+        facultyRecyclerView = findViewById(R.id.facultyRecyclerView)
 
 
-        mDbRef.child("student").addValueEventListener(object: ValueEventListener{
+
+        facultyRecyclerView.layoutManager = LinearLayoutManager(this)
+        facultyRecyclerView.adapter = facultyAdapter
+
+
+        mDbRef.child("teacher").addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                userList.clear()
+                facultyList.clear()
+
                 for (postSnapshot in snapshot.children ){
 
-                    val currentUser = postSnapshot.getValue(Student::class.java)
+                    val currentFaculty = postSnapshot.getValue(Faculty::class.java)
 
-                    println("mAthu = ${mAthu.currentUser?.uid.toString()}  Current User = ${currentUser?.uid}")
+                    println("mAthu = ${mAthu.currentUser?.uid.toString()}  Current User = ${currentFaculty?.uid}")
 
-                    if(mAthu.currentUser?.uid != currentUser?.uid){
-                        userList.add(currentUser!!)
+                    if(mAthu.currentUser?.uid != currentFaculty?.uid){
+                        facultyList.add(currentFaculty!!)
                     }
-                }
 
-                adaptor.notifyDataSetChanged()
+                }
+                facultyAdapter.notifyDataSetChanged()
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -63,17 +67,19 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    //Creates Logout Button
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
         return super.onCreateOptionsMenu(menu)
     }
 
+    //Logout Button
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if(item.itemId == R.id.logout){
 
             mAthu.signOut()
-            val intent = Intent(this@MainActivity,LoginActivity::class.java)
+            val intent = Intent(this@FacultyMain,LoginActivity::class.java)
             startActivity(intent)
             finish()
 

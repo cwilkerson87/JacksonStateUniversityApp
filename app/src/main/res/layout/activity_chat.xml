@@ -28,19 +28,32 @@
 
         <EditText
             android:id="@+id/messageBox"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:hint="Type a message"
             android:layout_marginLeft="10dp"
             android:paddingLeft="10dp"
             android:background="@drawable/message_box_background"
             android:layout_weight="85"/>
+
+        <ImageView
+            android:id="@+id/attachmentButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onClick"
+            android:background="@drawable/ic_attach_file"
+            tools:ignore="OnClick" />
+
         <ImageView
             android:id="@+id/sentButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/send"
+            android:src="@drawable/ic_send"
             android:layout_weight="20"/>
+
+
+
 
     </LinearLayout>
 

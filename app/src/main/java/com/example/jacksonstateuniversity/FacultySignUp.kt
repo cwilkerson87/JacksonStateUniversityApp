@@ -26,7 +26,6 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var btnSignup: Button
     private lateinit var stdRadioBtns: RadioGroup
 
-
     private lateinit var mAuth : FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
 
@@ -38,8 +37,6 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_faculty_sign_up)
-
-
 
         supportActionBar?.hide()
 
@@ -60,9 +57,9 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         btnSignup.setOnClickListener {
 
 
-            val firstname = edtfirstname.text.toString()
-            val lastname = edtLastname.text.toString()
-            val email = edtEmail.text.toString()
+            var firstname = edtfirstname.text.toString()
+            var lastname = edtLastname.text.toString()
+            var email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
             id = edtId.text.toString()
             roll = edtRoll.text.toString()
@@ -85,26 +82,32 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
 
 
-            if("@jsu.com" !in email){
-                Toast.makeText(applicationContext,"You Must Use @jsu.com As The Email", Toast.LENGTH_LONG).show()
+            if(email.equals("@jsu.edu",ignoreCase = true) && !email.endsWith("@jsu.edu")){
+                Toast.makeText(applicationContext,"You Must Use @jsu.edu As The Email", Toast.LENGTH_LONG).show()
             }
             else if(spinner?.selectedItem.toString() == "Select"){
                 Toast.makeText(this,"Select A Department", Toast.LENGTH_LONG).show()
             }
             else{
+
+                val firstNameStringChange = firstname.substring(0,1).uppercase() + firstname.substring(1).lowercase()
+                firstname = firstNameStringChange
+
+                val lastnameStringChange = lastname.substring(0,1).uppercase() + lastname.substring(1).lowercase()
+                lastname = lastnameStringChange
+
+                val emailStringChange = email.lowercase()
+                email = emailStringChange
+
                 signUp(firstname,lastname, id!!, roll!!,spinner?.selectedItem.toString(),email,password)
             }
         }
 
-
     }
-
-
 
 
     private fun signUp(firstname:String, lastname: String, id: String, roll: String,
                        department: String, email:String, password: String) {
-
 
 
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -112,7 +115,7 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 if (task.isSuccessful) {
 
                     addUserToDatabase(firstname,lastname,id,roll,department,email,mAuth.currentUser?.uid!!)
-                    val intent = Intent(this@FacultySignUp, MainActivity::class.java)
+                    val intent = Intent(this@FacultySignUp, WelcomeIntro::class.java)
                     finish()
                     startActivity(intent)
                 } else {
@@ -127,7 +130,7 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                                   roll: String, department: String, email:String, uid:String) {
 
         mDbRef = FirebaseDatabase.getInstance().getReference()
-        mDbRef.child("user").child(uid).setValue(Faculty(firstname,lastname,id,roll,department,email,uid))
+        mDbRef.child("teacher").child(uid).setValue(Faculty(firstname,lastname,id,roll,department,email,uid))
     }
 
     fun onClick(view: android.view.View) {
@@ -147,16 +150,13 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
                 R.id.faculty_Btn ->
 
-                        if(checked){
+                    if(checked){
                             Toast.makeText(this@FacultySignUp,"You Already On The Faculty Page", Toast.LENGTH_SHORT).show()
-                        }
-
+                    }
             }
         }
 
-
     }
-
 
 
     private fun idGenerator(): Int {
@@ -176,10 +176,8 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             edtId.setText("")
         }
         else{
-
-            val abbrv = mapOf("Accounting" to "Acct","Chemistry" to "Chem", "Engineer" to "Engr",
+            val abbrv = mapOf("Accounting" to "Acct","Chemistry" to "Chem", "Engineering" to "Engr",
                 "English" to "Eng","History" to "HIST","Psychology" to "Psych", "Architecture" to "Arch")
-
 
 
             //Sets Abbreviation Fot Roll

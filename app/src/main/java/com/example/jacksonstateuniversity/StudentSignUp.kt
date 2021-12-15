@@ -1,5 +1,6 @@
 package com.example.jacksonstateuniversity
 
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -43,8 +44,6 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(activity_sign_up)
 
-
-
         supportActionBar?.hide()
 
         mAuth = FirebaseAuth.getInstance()
@@ -61,18 +60,16 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
 
 
-
-
         val spinner: Spinner = findViewById(R.id.edt_year)
         spinner.onItemSelectedListener = this
 
         btnSignup.setOnClickListener {
 
 
-            val firstname = edtfirstname.text.toString()
-            val lastname = edtLastname.text.toString()
-            val email = edtEmail.text.toString()
-            val password = edtPassword.text.toString()
+            var firstname = edtfirstname.text.toString()
+            var lastname = edtLastname.text.toString()
+            var email = edtEmail.text.toString()
+            var password = edtPassword.text.toString()
             id = edtId.text.toString()
             roll = edtRoll.text.toString()
 
@@ -94,24 +91,30 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
 
 
-            if("@jsu.com" !in email){
-                println("Working")
-                Log.d("Check"," $email  is working")
-                Toast.makeText(applicationContext,"You Must Use @jsu.com As The Email", Toast.LENGTH_LONG).show()
+            if(email.equals("@jsu.edu",ignoreCase = true) && !email.endsWith("@jsu.edu")){
+
+                Toast.makeText(this,"You Must Use @jsu.edu As The Email", Toast.LENGTH_LONG).show()
             }
             else if(spinner.selectedItem.toString() == "Select"){
-                Log.d("Check","${edtfirstname.text.toString().isEmpty()} is working")
                 Toast.makeText(this,"Select A Year", Toast.LENGTH_LONG).show()
             }
             else{
+
+                val firstNameStringChange = firstname.substring(0,1).uppercase() + firstname.substring(1).lowercase()
+                firstname = firstNameStringChange
+
+                val lastnameStringChange = lastname.substring(0,1).uppercase() + lastname.substring(1).lowercase()
+                lastname = lastnameStringChange
+
+                val emailStringChange = email.lowercase()
+                email = emailStringChange
+
+
                 signUp(firstname,lastname, id!!, roll!!,spinner.selectedItem.toString(),email,password)
             }
         }
 
-
     }
-
-
 
 
     private fun signUp(firstname:String, lastname: String, id: String, roll: String,
@@ -123,8 +126,8 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 
-                    addUserToDatabase(firstname,lastname,id,roll,year,email,mAuth.currentUser?.uid!!)
-                    val intent = Intent(this@StudentSignUp, MainActivity::class.java)
+                    addUserToDatabase(firstname,lastname,id,roll,year,email.lowercase(),mAuth.currentUser?.uid!!)
+                    val intent = Intent(this@StudentSignUp, WelcomeIntro::class.java)
                     finish()
                     startActivity(intent)
                 } else {
@@ -139,7 +142,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                                   roll: String, year: String, email:String, uid:String) {
 
         mDbRef = FirebaseDatabase.getInstance().getReference()
-        mDbRef.child("user").child(uid).setValue(Student(firstname,lastname,id,roll,year,email,uid))
+        mDbRef.child("student").child(uid).setValue(Student(firstname,lastname,id,roll,year,email,uid))
     }
 
     fun onClick(view: android.view.View) {
@@ -156,8 +159,6 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     if(checked){
 
 
-                        println("THIS WHAT IS PRINTING 1${view.isChecked}")
-                        Log.d("Checking","This is printing1 ${view.isChecked}")
                         Toast.makeText(this@StudentSignUp,"You Already On The Student Page", Toast.LENGTH_SHORT).show()
 
                     }

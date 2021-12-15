@@ -10,7 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JacksonStateUniversity">
-
+        <activity
+            android:name=".WelcomeIntro"
+            android:exported="false" />
+        <activity
+            android:name=".GroupChat"
+            android:exported="false" />
+        <activity
+            android:name=".GroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacultyMain"
+            android:exported="false" />
         <activity
             android:name=".ChatActivity"
             android:exported="false" />
