@@ -85,6 +85,12 @@ class FacultyMain : AppCompatActivity() {
 
             return true
         }
+
+        else if(item.itemId == R.id.groupchat){
+            val intent1 = Intent(this@FacultyMain, GroupActivity::class.java)
+            startActivity(intent1)
+            return true
+        }
         return true
     }
 }

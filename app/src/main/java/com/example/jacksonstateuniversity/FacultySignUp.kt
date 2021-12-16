@@ -116,10 +116,11 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
                     addUserToDatabase(firstname,lastname,id,roll,department,email,mAuth.currentUser?.uid!!)
                     val intent = Intent(this@FacultySignUp, WelcomeIntro::class.java)
+                    intent.putExtra("facultyEmail", true)
                     finish()
                     startActivity(intent)
                 } else {
-
+                    intent.putExtra("facultyEmail", false)
                     Toast.makeText(this@FacultySignUp,"Some error happen", Toast.LENGTH_SHORT).show()
                 }
 

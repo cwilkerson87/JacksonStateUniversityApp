@@ -82,9 +82,9 @@ class LoginActivity : AppCompatActivity() {
 
                                if(studentEmail.contains(email)){
                                    emailCheck = email
-//                                   checkUserEmail(emailCheck)
-                                   Log.i("CHECK", "This is the email $email")
+//
                                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+
                                    finish()
                                    startActivity(intent)
                                }
@@ -111,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
                                 var facultyEmail = userEmail.value.toString()
 
                                 if(facultyEmail.contains(email)){
-                                    checkUserEmail()
+
                                     val intent = Intent(this@LoginActivity, FacultyMain::class.java)
                                     finish()
                                     startActivity(intent)
@@ -140,16 +140,4 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    fun getUser(email: String){
-
-        val email: String = email
-    }
-
-    companion object {
-        fun checkUserEmail(): String {
-
-            val email: String = ""
-            return email
-        }
-    }
 }

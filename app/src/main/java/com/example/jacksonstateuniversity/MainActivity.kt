@@ -79,6 +79,12 @@ class MainActivity : AppCompatActivity() {
 
             return true
         }
+
+        else if(item.itemId == R.id.groupchat){
+            val intent1 = Intent(this@MainActivity, GroupActivity::class.java)
+            startActivity(intent1)
+            return true
+        }
         return true
     }
 }
