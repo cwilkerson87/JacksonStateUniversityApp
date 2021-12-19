@@ -1,4 +1,4 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,13 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jacksonstateuniversity.FacultyAdaptor
+import com.example.jacksonstateuniversity.R
+import com.example.jacksonstateuniversity.Student.Faculty
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 //import com.google.firebase.database.R
 
-class FacultyMain : AppCompatActivity() {
+class FacultyActivity : AppCompatActivity() {
 
 
     private lateinit var facultyRecyclerView: RecyclerView
@@ -26,14 +30,13 @@ class FacultyMain : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_faculty_main)
 
+
         mAthu = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
         facultyList = ArrayList()
         facultyAdapter = FacultyAdaptor(this,facultyList)
 
         facultyRecyclerView = findViewById(R.id.facultyRecyclerView)
-
-
 
         facultyRecyclerView.layoutManager = LinearLayoutManager(this)
         facultyRecyclerView.adapter = facultyAdapter
@@ -76,21 +79,32 @@ class FacultyMain : AppCompatActivity() {
     //Logout Button
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        if(item.itemId == R.id.logout){
+        if(item.itemId == R.id.groupchat){
+            val intent1 = Intent(this@FacultyActivity, GroupActivity::class.java)
+            startActivity(intent1)
+            return true
+        }
+
+        else if(item.itemId == R.id.logout){
 
             mAthu.signOut()
-            val intent = Intent(this@FacultyMain,LoginActivity::class.java)
+            val intent = Intent(this@FacultyActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
 
             return true
         }
 
-        else if(item.itemId == R.id.groupchat){
-            val intent1 = Intent(this@FacultyMain, GroupActivity::class.java)
-            startActivity(intent1)
-            return true
-        }
+
         return true
     }
+
+    //Takes You Back To The Selection Screen
+    override fun onBackPressed() {
+
+        val intent = Intent(this@FacultyActivity, SelectionActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }

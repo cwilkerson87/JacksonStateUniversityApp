@@ -1,4 +1,4 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Adaptor
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jacksonstateuniversity.Student.Message
+import com.example.jacksonstateuniversity.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 
 class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -26,7 +27,6 @@ class MessageAdapter(val context: Context, val messageList: ArrayList<Message>) 
             val view : View = LayoutInflater.from(context).inflate(R.layout.sent, parent, false)
             return SentViewHolder(view)
         }
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

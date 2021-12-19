@@ -1,4 +1,4 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Student
 
 class Faculty {
 

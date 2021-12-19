@@ -1,4 +1,4 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Adaptor
 
 import android.content.Context
 import android.net.Uri
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.jacksonstateuniversity.R
 import java.util.ArrayList
 
 

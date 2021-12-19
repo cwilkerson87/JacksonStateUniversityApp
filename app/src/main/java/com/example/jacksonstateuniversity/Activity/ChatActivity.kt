@@ -1,18 +1,18 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Activity
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
-import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jacksonstateuniversity.Adaptor.MediaAdapter
+import com.example.jacksonstateuniversity.Adaptor.MessageAdapter
+import com.example.jacksonstateuniversity.R
+import com.example.jacksonstateuniversity.Student.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 
 //import com.google.firebase.database.R
 
@@ -39,12 +39,11 @@ class ChatActivity() : AppCompatActivity() {
     var senderRoom: String? = null
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
+        supportActionBar?.hide()
 
 
         val name = intent.getStringExtra("name")
@@ -56,7 +55,7 @@ class ChatActivity() : AppCompatActivity() {
 
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
-        supportActionBar?.title = name
+
 
         chatRecyclerView = findViewById(R.id.chatRecyclerView)
         mediaRecyclerView = findViewById(R.id.mediaList)
@@ -75,7 +74,6 @@ class ChatActivity() : AppCompatActivity() {
 
         mediaRecyclerView.layoutManager = LinearLayoutManager(this)
         mediaRecyclerView.adapter = mediaAdapter
-
 
 
         //logic for adding data to recyclerView

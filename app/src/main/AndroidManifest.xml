@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.jacksonstateuniversity">
+    package="com.example.jacksonstateuniversity" >
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JacksonStateUniversity">
+        android:theme="@style/Theme.JacksonStateUniversity"
+        tools:ignore="ExtraText">
+        android:usesCleartextTraffic="true"
+
+        <activity
+            android:name=".Activity.SelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
         <activity
             android:name=".WelcomeIntro"
             android:exported="false" />
@@ -17,27 +26,27 @@
             android:name=".GroupChat"
             android:exported="false" />
         <activity
-            android:name=".GroupActivity"
+            android:name=".Activity.GroupActivity"
             android:exported="false" />
         <activity
-            android:name=".FacultyMain"
-            android:exported="false" />
+            android:name=".Activity.FacultyActivity"
+            android:exported="false"/>
         <activity
-            android:name=".ChatActivity"
-            android:exported="false" />
+            android:name=".Activity.ChatActivity"
+            android:exported="false"/>
         <activity
-            android:name=".FacultySignUp"
-            android:exported="false" />
+            android:name=".SignUp.FacultySignUp"
+            android:exported="false"/>
         <activity
-            android:name=".Student"
+            android:name=".Student.Student"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".StudentSignUp"
+            android:name=".SignUp.StudentSignUp"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="true">
+            android:name=".Activity.LoginActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,8 +54,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-    </application>
+            android:name=".Activity.StudentActivity"
+            android:exported="false"/>
 
+    </application>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 </manifest>

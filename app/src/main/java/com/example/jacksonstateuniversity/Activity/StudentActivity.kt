@@ -1,4 +1,4 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,11 +8,14 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jacksonstateuniversity.Adaptor.UserAdaptor
+import com.example.jacksonstateuniversity.R
+import com.example.jacksonstateuniversity.Student.Student
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-//import com.google.firebase.database.R
 
-class MainActivity : AppCompatActivity() {
+
+class StudentActivity : AppCompatActivity() {
 
     private lateinit var userRecyclerView : RecyclerView
     private lateinit var userList: ArrayList<Student>
@@ -24,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.hide()
 
         mAthu = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
@@ -73,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         if(item.itemId == R.id.logout){
 
             mAthu.signOut()
-            val intent = Intent(this@MainActivity,LoginActivity::class.java)
+            val intent = Intent(this@StudentActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()
 
@@ -81,10 +86,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         else if(item.itemId == R.id.groupchat){
-            val intent1 = Intent(this@MainActivity, GroupActivity::class.java)
+            val intent1 = Intent(this@StudentActivity, GroupActivity::class.java)
             startActivity(intent1)
             return true
         }
         return true
+    }
+
+
+    //Takes You Back To Login
+    override fun onBackPressed() {
+
+        val intent = Intent(this@StudentActivity, SelectionActivity::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

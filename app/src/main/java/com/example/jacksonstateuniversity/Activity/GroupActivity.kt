@@ -1,13 +1,14 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Activity
 
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
+import com.example.jacksonstateuniversity.GroupChat
+import com.example.jacksonstateuniversity.R
 import com.google.firebase.database.*
 import java.util.ArrayList
 import java.util.HashMap

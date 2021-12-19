@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/logout" android:title="Log out"/>
-    <item android:id="@+id/groupchat" android:title="Group Chat"/>
 
+    <item android:id="@+id/groupchat" android:title="@string/group_chat"/>
+    <item android:id="@+id/logout" android:title="@string/log_out"/>
 
 </menu>
 

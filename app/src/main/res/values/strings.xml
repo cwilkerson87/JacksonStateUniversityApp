@@ -1,6 +1,26 @@
 <resources>
     <string name="app_name">JacksonStateUniversity</string>
 
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="request_password">Request Password</string>
+    <string name="back_to_login">Back To Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="student">Student</string>
+    <string name="faculty">Faculty</string>
+
+
+    <string name="roll">Roll#</string>
+    <string name="id">ID#</string>
+
+    <string name="lastname">LastName</string>
+    <string name="firstname">FirstName</string>
+    <string name="group_chat">Group Chat</string>
+    <string name="log_out">Log out</string>
+
+
     <string-array name="year">
 
         <item>Select</item>

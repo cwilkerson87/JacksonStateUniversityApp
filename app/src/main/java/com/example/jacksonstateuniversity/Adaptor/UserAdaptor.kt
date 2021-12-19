@@ -1,4 +1,4 @@
-package com.example.jacksonstateuniversity
+package com.example.jacksonstateuniversity.Adaptor
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import com.example.jacksonstateuniversity.Activity.ChatActivity
+import com.example.jacksonstateuniversity.R
+import com.example.jacksonstateuniversity.Student.Student
 
 class UserAdaptor(val context: Context, val userList:ArrayList<Student>):
     RecyclerView.Adapter<UserAdaptor.UserViewHolder>(){
@@ -29,7 +31,7 @@ class UserAdaptor(val context: Context, val userList:ArrayList<Student>):
         holder.textName.text= currentUser.firstname +" "+ currentUser.lastname
 
         holder.itemView.setOnClickListener{
-            val intent = Intent(context,ChatActivity::class.java)
+            val intent = Intent(context, ChatActivity::class.java)
 
             intent.putExtra("name",currentUser.firstname +" "+ currentUser.lastname)
             intent.putExtra("uid", currentUser.uid)

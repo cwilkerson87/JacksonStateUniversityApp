@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FacultySignUp">
+    tools:context=".SignUp.FacultySignUp">
 
     <ImageView
         android:id="@+id/jsu_logo"
@@ -131,24 +131,24 @@
         android:entries="@array/departments"
         android:paddingLeft="3dp" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edt_password"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edt_button_background"
-        android:text="Log in"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+<!--    <Button-->
+<!--        android:id="@+id/btnLogin"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/edt_password"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:background="@drawable/edt_button_background"-->
+<!--        android:text="Log in"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp" />-->
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/edt_password"
-        android:layout_marginLeft="230dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/edt_button_background"
         android:text="Sign Up"
@@ -166,14 +166,14 @@
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_marginVertical="140dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
             android:onClick="onClick"
             android:checked="false"
             android:text="Student"
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/faculty_Btn"
+            android:id="@+id/faculty_btn"
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:checked="true"
