@@ -30,6 +30,7 @@ class FacultyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_faculty_main)
 
+        supportActionBar?.title = "Faculty"
 
         mAthu = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()

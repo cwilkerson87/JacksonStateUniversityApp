@@ -43,7 +43,7 @@ class ChatActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
-        supportActionBar?.hide()
+
 
 
         val name = intent.getStringExtra("name")
@@ -55,7 +55,7 @@ class ChatActivity() : AppCompatActivity() {
 
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
-
+        supportActionBar?.title = name
 
         chatRecyclerView = findViewById(R.id.chatRecyclerView)
         mediaRecyclerView = findViewById(R.id.mediaList)

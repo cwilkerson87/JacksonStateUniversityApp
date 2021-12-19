@@ -183,15 +183,13 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
         else{
             val abbrv = mapOf("Accounting" to "Acct","Chemistry" to "Chem", "Engineering" to "Engr",
-                "English" to "Eng","History" to "HIST","Psychology" to "Psych", "Architecture" to "Arch")
+                "English" to "Eng","History" to "Hist","Psychology" to "Psych", "Architecture" to "Arch")
 
 
             //Sets Abbreviation Fot Roll
             for(dept in abbrv.keys){
 
-                println("This is outside the loop $dept")
                 if(parent?.getItemAtPosition(position) == dept){
-                    println("This in the loop $dept")
                     edtRoll.setText(abbrv[dept])
                  }
             }

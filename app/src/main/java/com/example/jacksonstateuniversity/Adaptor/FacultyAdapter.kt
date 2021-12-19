@@ -15,6 +15,7 @@ class FacultyAdaptor(val context: Context, val userList:ArrayList<Faculty>):
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textName = itemView.findViewById<TextView>(R.id.txt_name)
+        val textYear = itemView.findViewById<TextView>(R.id.txt_year)
     }
 
 
@@ -26,6 +27,7 @@ class FacultyAdaptor(val context: Context, val userList:ArrayList<Faculty>):
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val currentUser = userList[position]
         holder.textName.text = currentUser.firstname + " " + currentUser.lastname
+        holder.textYear.text = currentUser.roll
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ChatActivity::class.java)

@@ -35,6 +35,7 @@ class WelcomeIntro : AppCompatActivity() {
 
 
 
+
         val studentEmail: Boolean = intent.getBooleanExtra("studentEmail",false)
         val facultyEmail: Boolean = intent.getBooleanExtra("facultyEmail",false)
 
@@ -65,28 +66,28 @@ class WelcomeIntro : AppCompatActivity() {
         Log.i("Student", "Student $studentEmail")
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this@WelcomeIntro, SelectionActivity::class.java)
-            finish()
-            song.stop()
-            videoView?.stopPlayback()
-            startActivity(intent)
+//            finish()
+//            song.stop()
+//            videoView?.stopPlayback()
+//            startActivity(intent)
 
-//
-//            if(studentEmail){
-//                val intent = Intent(this@WelcomeIntro, SelectionActivity::class.java)
-//                finish()
-//            song.stop()
-//                videoView?.stopPlayback()
-//                startActivity(intent)
-//
-//            }
-//            else if(facultyEmail){
-//                val intent = Intent(this@WelcomeIntro, FacultyActivity::class.java)
-//                finish()
-//            song.stop()
-//                videoView?.stopPlayback()
-//                startActivity(intent)
-//
-//            }
+
+            if(studentEmail){
+                val intent = Intent(this@WelcomeIntro, SelectionActivity::class.java)
+                finish()
+            song.stop()
+                videoView?.stopPlayback()
+                startActivity(intent)
+
+            }
+            else if(facultyEmail){
+                val intent = Intent(this@WelcomeIntro, FacultyActivity::class.java)
+                finish()
+            song.stop()
+                videoView?.stopPlayback()
+                startActivity(intent)
+
+            }
         }, 40000)
     }
 }

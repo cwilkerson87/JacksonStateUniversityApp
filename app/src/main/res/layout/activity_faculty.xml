@@ -14,14 +14,23 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"/>
 
+    <TextView
+        android:id="@+id/txt.year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:text="S"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <View
-        android:layout_below="@id/txt.name"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_below="@id/txt.name"
         android:layout_marginTop="5dp"
-        android:background="@color/edt_background_color"/>
-
-
+        android:background="@color/edt_background_color" />
 
 
 </RelativeLayout>

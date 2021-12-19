@@ -76,7 +76,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             var firstname = edtfirstname.text.toString()
             var lastname = edtLastname.text.toString()
             var email = edtEmail.text.toString()
-            var password = edtPassword.text.toString()
+            val password = edtPassword.text.toString()
             id = edtId.text.toString()
             roll = edtRoll.text.toString()
 
@@ -88,8 +88,8 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 if(string == null  || string.isEmpty()){
 
                     when(string){
-                       firstname -> Toast.makeText(this, "Fill In First The Name Field",Toast.LENGTH_LONG).show()
-                        lastname ->   Toast.makeText(this, "Fill In Last The Name Field",Toast.LENGTH_LONG).show()
+                       firstname -> Toast.makeText(this, "Fill In Thw First Name Field",Toast.LENGTH_LONG).show()
+                        lastname ->   Toast.makeText(this, "Fill In The Last Name Field",Toast.LENGTH_LONG).show()
                         email  ->   Toast.makeText(this, "Fill In The Email Field",Toast.LENGTH_LONG).show()
                         password -> Toast.makeText(this, "Fill In The Password Field",Toast.LENGTH_LONG).show()
                         spinner.onItemClickListener.toString() ->   Toast.makeText(this, "Select An Option From DropDown Menu",Toast.LENGTH_LONG).show()
@@ -127,33 +127,6 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private fun signUp(firstname:String, lastname: String, id: String, roll: String,
                        year: String, email:String, password: String) {
 
-//
-//        mDbRef.child("student").addValueEventListener(object: ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//
-//                userList.clear()
-//
-//                for (postSnapshot in snapshot.children ){
-//
-//                    val currentUser = postSnapshot.getValue(Student::class.java)
-//
-//                    println("mAthu = ${mAuth.currentUser?.uid.toString()}  Current User = ${currentUser?.uid}")
-//
-//                    if(mAuth.currentUser?.uid != currentUser?.uid){
-//                        userList.add(currentUser!!)
-//                    }
-//                }
-//
-//                adaptor.notifyDataSetChanged()
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//
-//        })
-
 
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -179,7 +152,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         mDbRef.child("student").child(uid).setValue(Student(firstname,lastname,id,roll,year,email,uid))
     }
 
-    fun onClick(view: android.view.View) {
+    fun onClick(view: View) {
 
 
         if(view is RadioButton){
@@ -191,7 +164,6 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 R.id.std_Btn ->
 
                     if(checked){
-
 
                         Toast.makeText(this@StudentSignUp,"You Already On The Student Page", Toast.LENGTH_SHORT).show()
 
@@ -229,7 +201,20 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             edtId.setText("")
         }
         else{
-            edtRoll.setText("${parent?.getItemAtPosition(position)}".substring(0,1))
+
+            val abbrv = mapOf("Freshman" to "Fr.","Sophomore" to "Soph.", "Junior" to "Jr.",
+                "Senior" to "Sr.")
+
+
+            //Sets Abbreviation Fot Roll
+            for(dept in abbrv.keys){
+
+                if(parent?.getItemAtPosition(position) == dept){
+                    edtRoll.setText(abbrv[dept])
+                }
+            }
+
+//            edtRoll.setText("${parent?.getItemAtPosition(position)}".substring(0,3))
             edtRoll.inputType = InputType.TYPE_NULL
 
             edtId.setText("S" + idGenerator().toString())

@@ -23,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnLogin: Button
     private lateinit var btnSignup: Button
     private lateinit var txtReset: TextView
+    private lateinit var stringArray: ArrayList<String?>
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
@@ -53,20 +54,65 @@ class LoginActivity : AppCompatActivity() {
 
         list = ArrayList()
 
+
+
+        stringArray = arrayListOf(edtEmail.toString(),edtPassword.toString())
+
+
+        for(string in stringArray){
+
+            if(string == null  || string.isEmpty()){
+
+                when(string){
+                    edtEmail.toString() -> Toast.makeText(this, "Fill In The Email Field",Toast.LENGTH_LONG).show()
+                    edtPassword.toString() ->   Toast.makeText(this, "Fill In The Password Field",Toast.LENGTH_LONG).show()
+
+                }
+            }
+        }
+
         btnSignup.setOnClickListener{
             val intent = Intent(this, StudentSignUp::class.java)
             startActivity(intent)
         }
 
         btnLogin.setOnClickListener {
-            var email = edtEmail.text.toString()
+            val email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
 
 
-            var emailStringChange = email.lowercase()
-           var newEmail = emailStringChange
+            val emailStringChange = email.lowercase()
+           val newEmail = emailStringChange
 
-            login(newEmail, password)
+
+            stringArray = arrayListOf(edtEmail.toString(),edtPassword.toString())
+
+
+            for(string in stringArray){
+
+
+
+                if(string == null  || string.isEmpty()){
+
+                    when(string){
+                        newEmail -> Toast.makeText(this, "Fill In The Email Field",Toast.LENGTH_LONG).show()
+                        password ->   Toast.makeText(this, "Fill In The Password Field",Toast.LENGTH_LONG).show()
+
+                    }
+                }
+            }
+
+            if(newEmail == ""){
+
+                Toast.makeText(this,"You Must Use @jsu.edu As The Email", Toast.LENGTH_LONG).show()
+            }
+            if(password == ""){
+                Toast.makeText(this,"Fill In Password Field", Toast.LENGTH_LONG).show()
+            }
+            else{
+                login(newEmail, password)
+            }
+
         }
 
         txtReset.setOnClickListener( View.OnClickListener {

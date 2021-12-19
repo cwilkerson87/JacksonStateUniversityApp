@@ -15,6 +15,16 @@
         android:layout_marginLeft="10dp"/>
 
 
+    <TextView
+        android:id="@+id/txt.years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:text="S"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 
     <View

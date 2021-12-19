@@ -8,7 +8,9 @@
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/btn_background.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/edt_background.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_attach_file.xml" value="0.2574074074074074" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_send.xml" value="0.2574074074074074" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/message_box_background.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_chat.xml" value="0.264" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty.xml" value="0.2" />
@@ -30,7 +32,7 @@
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/faculty.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/menu.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/receive.xml" value="0.1" />
-        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/sent.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/sent.xml" value="0.264" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/menu/menu.xml" value="0.264" />
       </map>
     </option>

@@ -28,7 +28,7 @@ class StudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.hide()
+        supportActionBar?.title = "Student"
 
         mAthu = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()

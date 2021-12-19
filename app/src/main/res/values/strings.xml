@@ -19,6 +19,7 @@
     <string name="firstname">FirstName</string>
     <string name="group_chat">Group Chat</string>
     <string name="log_out">Log out</string>
+    <string name="this_is_sent_message">This is sent message</string>
 
 
     <string-array name="year">
