@@ -33,7 +33,7 @@ class WelcomeIntro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome_intro)
 
-
+        supportActionBar?.hide()
 
 
         val studentEmail: Boolean = intent.getBooleanExtra("studentEmail",false)
@@ -57,10 +57,10 @@ class WelcomeIntro : AppCompatActivity() {
         videoView!!.start()
 
 
-        val song: MediaPlayer = MediaPlayer.create(this, R.raw.music)
+//        val song: MediaPlayer = MediaPlayer.create(this, R.raw.music)
 
         supportActionBar?.hide()
-        song.start()
+//        song.start()
 
         Log.i("Faculty", "Faculty $facultyEmail")
         Log.i("Student", "Student $studentEmail")
@@ -75,7 +75,7 @@ class WelcomeIntro : AppCompatActivity() {
             if(studentEmail){
                 val intent = Intent(this@WelcomeIntro, SelectionActivity::class.java)
                 finish()
-            song.stop()
+//            song.stop()
                 videoView?.stopPlayback()
                 startActivity(intent)
 
@@ -83,11 +83,11 @@ class WelcomeIntro : AppCompatActivity() {
             else if(facultyEmail){
                 val intent = Intent(this@WelcomeIntro, FacultyActivity::class.java)
                 finish()
-            song.stop()
+//            song.stop()
                 videoView?.stopPlayback()
                 startActivity(intent)
 
             }
-        }, 40000)
+        }, 20000)
     }
 }

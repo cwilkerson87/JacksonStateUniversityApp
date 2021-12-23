@@ -2,6 +2,8 @@ package com.example.jacksonstateuniversity.Activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +15,6 @@ import com.example.jacksonstateuniversity.R
 import com.example.jacksonstateuniversity.Student.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-
-//import com.google.firebase.database.R
 
 
 class ChatActivity() : AppCompatActivity() {
@@ -33,6 +33,8 @@ class ChatActivity() : AppCompatActivity() {
     private lateinit var messageList: ArrayList<Message>
     private lateinit var mediaArray: ArrayList<String>
 
+    private lateinit var mAthu: FirebaseAuth
+
     private lateinit var mDbRef: DatabaseReference
 
     var receiverRoom: String? = null
@@ -44,24 +46,28 @@ class ChatActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
 
 
-
-
         val name = intent.getStringExtra("name")
         val receiverUid = intent.getStringExtra("uid")
 
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
 
+        mAthu = FirebaseAuth.getInstance()
+
         mDbRef = FirebaseDatabase.getInstance().getReference()
 
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
+
         supportActionBar?.title = name
 
         chatRecyclerView = findViewById(R.id.chatRecyclerView)
         mediaRecyclerView = findViewById(R.id.mediaList)
+
         messageBox = findViewById(R.id.messageBox)
         sendButton = findViewById(R.id.sentButton)
+
         attachmentButton = findViewById(R.id.attachmentButton)
+
         messageList = ArrayList()
         mediaArray = ArrayList()
 
@@ -115,13 +121,59 @@ class ChatActivity() : AppCompatActivity() {
         attachmentButton.setOnClickListener{
 
 
-            phoneGallery()
+//            phoneGallery()
 
+        }
 
+    }
+
+    //Creates Menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu5,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    //Menu Options
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(item.itemId == R.id.groupchat){
+            val intent1 = Intent(this@ChatActivity, GroupActivity::class.java)
+            startActivity(intent1)
+            return true
+        }
+
+        if(item.itemId == R.id.student){
+            val intent1 = Intent(this@ChatActivity, StudentActivity::class.java)
+            startActivity(intent1)
+            return true
         }
 
 
+        if(item.itemId == R.id.faculty){
+            val intent1 = Intent(this@ChatActivity, FacultyActivity::class.java)
+            startActivity(intent1)
+            return true
         }
+
+
+        if(item.itemId == R.id.group_chat){
+            val intent1 = Intent(this@ChatActivity, GroupActivity::class.java)
+            startActivity(intent1)
+            return true
+        }
+
+        else if(item.itemId == R.id.logout){
+
+            mAthu.signOut()
+            val intent = Intent(this@ChatActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+
+            return true
+        }
+
+        return true
+    }
 
 
     //Opens Up The Gallery

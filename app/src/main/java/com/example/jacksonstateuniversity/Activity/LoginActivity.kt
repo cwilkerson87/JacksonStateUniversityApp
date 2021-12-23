@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
         list = ArrayList()
 
 
-
+        //Print Toast Fill In Message
         stringArray = arrayListOf(edtEmail.toString(),edtPassword.toString())
 
 
@@ -82,33 +82,23 @@ class LoginActivity : AppCompatActivity() {
 
 
             val emailStringChange = email.lowercase()
-           val newEmail = emailStringChange
+            val newEmail = emailStringChange
 
 
-            stringArray = arrayListOf(edtEmail.toString(),edtPassword.toString())
+            //Toast For Fill In Error Messages
+            if(newEmail == ""){
 
-
-            for(string in stringArray){
-
-
-
-                if(string == null  || string.isEmpty()){
-
-                    when(string){
-                        newEmail -> Toast.makeText(this, "Fill In The Email Field",Toast.LENGTH_LONG).show()
-                        password ->   Toast.makeText(this, "Fill In The Password Field",Toast.LENGTH_LONG).show()
-
-                    }
-                }
+                Toast.makeText(this,"Fill In Email Field", Toast.LENGTH_LONG).show()
+            }
+            else if(password == ""){
+                Toast.makeText(this,"Fill In Password Field", Toast.LENGTH_LONG).show()
             }
 
-            if(newEmail == ""){
+            if(newEmail.equals("@jsu.edu",ignoreCase = true) && !email.endsWith("@jsu.edu")){
 
                 Toast.makeText(this,"You Must Use @jsu.edu As The Email", Toast.LENGTH_LONG).show()
             }
-            if(password == ""){
-                Toast.makeText(this,"Fill In Password Field", Toast.LENGTH_LONG).show()
-            }
+
             else{
                 login(newEmail, password)
             }
@@ -130,7 +120,7 @@ class LoginActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email!!, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.i("Checking:", "This is what is printing for successful")
+
                     stdId.addValueEventListener(object : ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
 

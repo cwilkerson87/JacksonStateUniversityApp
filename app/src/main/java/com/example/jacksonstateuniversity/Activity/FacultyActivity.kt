@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jacksonstateuniversity.FacultyAdaptor
@@ -73,7 +72,7 @@ class FacultyActivity : AppCompatActivity() {
 
     //Creates Logout Button
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
+        menuInflater.inflate(R.menu.menu3,menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -82,6 +81,12 @@ class FacultyActivity : AppCompatActivity() {
 
         if(item.itemId == R.id.groupchat){
             val intent1 = Intent(this@FacultyActivity, GroupActivity::class.java)
+            startActivity(intent1)
+            return true
+        }
+
+        if(item.itemId == R.id.student){
+            val intent1 = Intent(this@FacultyActivity, StudentActivity::class.java)
             startActivity(intent1)
             return true
         }

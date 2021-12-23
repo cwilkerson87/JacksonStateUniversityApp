@@ -69,12 +69,21 @@ class StudentActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
+        menuInflater.inflate(R.menu.menu2,menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+        if(item.itemId == R.id.faculty){
+
+            mAthu.signOut()
+            val intent = Intent(this@StudentActivity, FacultyActivity::class.java)
+            startActivity(intent)
+            finish()
+
+            return true
+        }
         if(item.itemId == R.id.logout){
 
             mAthu.signOut()
@@ -94,7 +103,7 @@ class StudentActivity : AppCompatActivity() {
     }
 
 
-    //Takes You Back To Login
+    //Takes You Back To Selection
     override fun onBackPressed() {
 
         val intent = Intent(this@StudentActivity, SelectionActivity::class.java)

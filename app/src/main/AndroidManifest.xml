@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.jacksonstateuniversity" >
+    package="com.example.jacksonstateuniversity">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JacksonStateUniversity"
         tools:ignore="ExtraText">
-        android:usesCleartextTraffic="true"
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".Activity.SelectionActivity"
             android:exported="false" />
@@ -30,13 +40,13 @@
             android:exported="false" />
         <activity
             android:name=".Activity.FacultyActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Activity.ChatActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SignUp.FacultySignUp"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Student.Student"
             android:exported="false"
@@ -46,17 +56,12 @@
             android:exported="false" />
         <activity
             android:name=".Activity.LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activity.StudentActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
 </manifest>

@@ -42,8 +42,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private var id: String? = null
     private var roll: String? = null
     private lateinit var stringArray: ArrayList<String?>
-    private lateinit var adaptor: UserAdaptor
-    private lateinit var userList: ArrayList<Student>
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +52,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         supportActionBar?.hide()
 
         mAuth = FirebaseAuth.getInstance()
-//        mDbRef = FirebaseDatabase.getInstance().getReference()
+
         edtfirstname = findViewById(R.id.edt_frstname)
         edtLastname = findViewById(R.id.edt_lstname)
         edtEmail = findViewById(R.id.edt_email)
@@ -72,16 +71,15 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         btnSignup.setOnClickListener {
 
-
             var firstname = edtfirstname.text.toString()
             var lastname = edtLastname.text.toString()
             var email = edtEmail.text.toString()
             val password = edtPassword.text.toString()
+
             id = edtId.text.toString()
             roll = edtRoll.text.toString()
 
             stringArray = arrayListOf(firstname,lastname,spinner.selectedItem.toString(),email,password,id,roll)
-
 
             for(string in stringArray){
 
@@ -98,7 +96,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
 
 
-            if(email.equals("@jsu.edu",ignoreCase = true) && !email.endsWith("@jsu.edu")){
+            if(!email.equals("@jsu.edu",ignoreCase = true) && !email.endsWith("@jsu.edu")){
 
                 Toast.makeText(this,"You Must Use @jsu.edu As The Email", Toast.LENGTH_LONG).show()
             }
@@ -133,6 +131,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 if (task.isSuccessful) {
 
                     addUserToDatabase(firstname,lastname,id,roll,year,email.lowercase(),mAuth.currentUser?.uid!!)
+
                     val intent = Intent(this@StudentSignUp, WelcomeIntro::class.java)
                     intent.putExtra("studentEmail", true)
                     finish()
@@ -206,7 +205,7 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 "Senior" to "Sr.")
 
 
-            //Sets Abbreviation Fot Roll
+            //Sets Abbreviation For Roll
             for(dept in abbrv.keys){
 
                 if(parent?.getItemAtPosition(position) == dept){
@@ -214,7 +213,6 @@ class StudentSignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 }
             }
 
-//            edtRoll.setText("${parent?.getItemAtPosition(position)}".substring(0,3))
             edtRoll.inputType = InputType.TYPE_NULL
 
             edtId.setText("S" + idGenerator().toString())
