@@ -11,8 +11,10 @@
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_attach_file.xml" value="0.2574074074074074" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/ic_send.xml" value="0.2574074074074074" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/list_view_background.xml" value="0.12447916666666667" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/drawable/message_box_background.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_chat.xml" value="0.264" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_dialogbox.xml" value="0.264" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty.xml" value="0.2" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty_main.xml" value="0.264" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_faculty_sign_up.xml" value="0.4" />
@@ -30,6 +32,8 @@
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_splash_screen.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_user.xml" value="0.264" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/activity_welcome_intro.xml" value="0.1" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/custom_group_chat_dialogbox.xml" value="0.4" />
+        <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/dialog_recycler.xml" value="0.2" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/faculty.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/menu.xml" value="0.1" />
         <entry key="..\:/Users/curti/AndroidStudioProjects/JacksonStateUniversity/app/src/main/res/layout/receive.xml" value="0.1" />

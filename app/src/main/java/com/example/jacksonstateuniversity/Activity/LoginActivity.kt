@@ -155,7 +155,7 @@ class LoginActivity : AppCompatActivity() {
 
                             for (userEmail in snapshot.children) {
 
-                                var facultyEmail = userEmail.value.toString()
+                                val facultyEmail = userEmail.value.toString()
 
                                 if (facultyEmail.contains(email)) {
 

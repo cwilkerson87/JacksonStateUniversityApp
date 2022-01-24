@@ -134,8 +134,10 @@ class FacultySignUp : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private fun addUserToDatabase(firstname: String, lastname: String, id: String,
                                   roll: String, department: String, email:String, uid:String) {
 
+        val firstLastName = "$firstname $lastname"
+
         mDbRef = FirebaseDatabase.getInstance().getReference()
-        mDbRef.child("teacher").child(uid).setValue(Faculty(firstname,lastname,id,roll,department,email,uid))
+        mDbRef.child("teacher").child(firstLastName).setValue(Faculty(firstname,lastname,id,roll,department,email,uid))
     }
 
     fun onClick(view: android.view.View) {

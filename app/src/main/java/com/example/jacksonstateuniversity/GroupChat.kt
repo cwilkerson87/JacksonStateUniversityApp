@@ -33,6 +33,7 @@ class GroupChat : AppCompatActivity() {
     private var chat_conversation: TextView? = null
     private var user_name: String? = null
     private var room_name: String? = null
+    private var user_Id: String? = null
     private var root: DatabaseReference? = null
     private var temp_key: String? = null
 
@@ -56,6 +57,7 @@ class GroupChat : AppCompatActivity() {
         user_name = intent.extras!!["user_name"].toString()
         user_name = intent.extras!!["user_name"].toString()
         room_name = intent.extras!!["room_name"].toString()
+        user_Id = intent.extras!!["user_id"].toString()
 
         title = " Room - $room_name"
         root = FirebaseDatabase.getInstance().reference.child(room_name!!)
